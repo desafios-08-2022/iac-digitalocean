@@ -3,10 +3,18 @@
 crie e populo o arquivo rterraform.tfvars conforme exemplo
 o Token da DO é na console no menu API
 
+```
 terraform plan -out plan1
 terraform apply plan1
-kubectl apply -f kube-news/k8s/deployment.yaml
+cp kube_config.yaml ~/.kube/config  # Cuidado - este comando irá sobrepor o arquivo config da pasta ~/.kube
 
-espere gerar o IP e acesse a aplicação e faça seus testes
+kubectl apply -f kube-news/k8s/deployment.yaml
+```
+```
+watch kubectl get svc
+```
+
+espere gerar o IP, acesse a aplicação no navegador e faça seus testes!
+
 
 terraform destroy
